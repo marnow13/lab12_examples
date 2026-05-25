@@ -26,8 +26,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build Docker image
-        run: docker build -t ghcr.io/${{ github.repository }}:latest .
-
+        run: docker build -t ghcr.io/${{ github.repository }}:latest ./L12
       - name: Tag Docker image
         run: docker tag ghcr.io/${{ github.repository }}:latest ghcr.io/${{ github.repository }}:${{ github.sha }}
 
